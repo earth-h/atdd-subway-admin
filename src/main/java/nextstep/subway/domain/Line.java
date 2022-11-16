@@ -70,7 +70,7 @@ public class Line extends BaseEntity {
 
     public void addSection(Section section) {
         sections.addSection(section);
-        this.distance = Distance.from(sections.totalDistance());
+        this.distance = sections.totalDistance();
     }
 
     public List<Station> findInOrderStations() {
@@ -79,7 +79,7 @@ public class Line extends BaseEntity {
 
     public void deleteStationInLine(Station station) {
         sections.deleteStationInLine(station);
-        this.distance = Distance.from(sections.totalDistance());
+        this.distance = sections.totalDistance();
     }
 
     public Long getId() {

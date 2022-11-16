@@ -63,10 +63,10 @@ public class Sections {
         return sortStations;
     }
 
-    public Long totalDistance() {
-        return sections.stream()
+    public Distance totalDistance() {
+        return Distance.from(sections.stream()
                 .map(Section::getDistance)
-                .mapToLong(Distance::value).sum();
+                .mapToLong(Distance::value).sum());
     }
 
     public void addSection(Section newSection) {
